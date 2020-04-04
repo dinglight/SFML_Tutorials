@@ -2,7 +2,6 @@
 
 #include <cmath>
 
-#include "ResourceHolder.h"
 #include "Logger.h"
 
 TitleState::TitleState(StateStack& stack, Context context)
@@ -12,7 +11,7 @@ TitleState::TitleState(StateStack& stack, Context context)
 , mShowText(true)
 , mTextEffectTime(sf::Time::Zero)
 {
-    Logger::WriteLog("TitleState construct");
+    LOG(INFO) << "TitleState construct";
     mBackgroundSprite.setTexture(context.textureHolder->Get(TextureID::TitleScreen));
 
     mText.setFont(context.fontHolder->Get(FontID::Main));
@@ -26,6 +25,7 @@ bool TitleState::HandleEvent(const sf::Event& event)
 {
     if (event.type == sf::Event::KeyPressed) {
         RequestStatePop();
+        RequestStatePush(StateID::Menu);
     }
     return true;
 }

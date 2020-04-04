@@ -17,24 +17,27 @@ State::State(StateStack& stack, Context context)
 :mStack(&stack)
 ,mContext(context)
 {
-    Logger::WriteLog("State construct");
+    LOG(INFO) << "State construct";
 }
 
 State::~State()
 {
-    Logger::WriteLog("State desctruct");
+    LOG(INFO) << "State desctruct";
 }
 
 void State::RequestStatePush(StateID stateID)
 {
+    LOG(INFO) << "State::RequestStatePush";
     mStack->PushState(stateID);
 }
 void State::RequestStatePop()
 {
+    LOG(INFO) << "State::RequestStatePop";
     mStack->PopState();
 }
 void State::RequestStateClear()
 {
+    LOG(INFO) << "State::RequestStateClear";
     mStack->ClearStates();
 }
 

@@ -7,7 +7,7 @@ int main()
         Application app;
         app.Run();
     } catch(std::exception& e) {
-        Logger::WriteLog(std::string("Exception: ") + e.what());
+        LOG(ERROR) << "Exception: " << e.what();
     }
     return 0;
 }

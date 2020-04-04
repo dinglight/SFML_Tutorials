@@ -2,6 +2,8 @@ cmake_minimum_required(VERSION 3.5)
 
 project(05_state)
 
+set(CMAKE_CXX_STANDARD 17)
+
 find_package(PkgConfig)
 pkg_check_modules(SFML REQUIRED
     sfml-all
@@ -12,6 +14,7 @@ set(SRCS
     src/State.cpp
     src/StateStack.cpp
     src/TitleState.cpp
+    src/MenuState.cpp
     src/Logger.cpp
     )
 add_executable(${PROJECT_NAME} ${SRCS})

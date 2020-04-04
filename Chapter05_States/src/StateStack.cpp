@@ -10,11 +10,11 @@ StateStack::StateStack(State::Context context)
 , mContext(context)
 , mFactories()
 {
-    Logger::WriteLog("StateStack construct");
+    LOG(INFO) << "StateStack construct";
 }
 StateStack::~StateStack()
 {
-    Logger::WriteLog("StateStack desctruct");
+    LOG(INFO) << "StateStack desctruct";
 }
 void StateStack::HandleEvent(const sf::Event& event)
 {
@@ -43,7 +43,6 @@ void StateStack::Draw()
 
 void StateStack::PushState(StateID stateID)
 {
-    Logger::WriteLog("StateStack::PushState");
     mPendingList.emplace_back(PendingChange(Action::Push, stateID));
 }
 
@@ -66,6 +65,7 @@ State::Ptr StateStack::CreateState(StateID stateID)
 {
     auto found = mFactories.find(stateID);
     assert(found != mFactories.end());
+    LOG(INFO) << "StateStack::CreateState";
     return found->second();
 }
 void StateStack::ApplyPendingChanges()

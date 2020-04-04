@@ -3,7 +3,6 @@
 
 #include <SFML/System/Time.hpp>
 #include <SFML/Graphics/RenderWindow.hpp>
-#include "ResourceHolder.h"
 #include "ResourceIdentifiers.h"
 #include "StateStack.h"
 

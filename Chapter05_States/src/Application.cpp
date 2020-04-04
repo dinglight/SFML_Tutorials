@@ -3,6 +3,7 @@
 #include <SFML/Window/Event.hpp>
 
 #include "TitleState.h"
+#include "MenuState.h"
 
 #include "Logger.h"
 
@@ -15,15 +16,16 @@ Application::Application()
 , mStateStack(State::Context(mWindow, mTexturesHolder, mFontHolder))
 {
     mTexturesHolder.Load(TextureID::TitleScreen, "res/textures/TitleScreen.png");
+    mTexturesHolder.Load(TextureID::MenuScreen, "res/textures/MenuScreen.png");
     mFontHolder.Load(FontID::Main, "res/fonts/Sansation.ttf");
 
-    Logger::WriteLog("Application construct");
+    LOG(INFO) << "Application construct";
     RegisterStates();
     mStateStack.PushState(StateID::Title);
 }
 Application::~Application()
 {
-    Logger::WriteLog("Application destruct");
+    LOG(INFO) << "Application destruct";
 }
 void Application::Run()
 {
@@ -74,6 +76,7 @@ void Application::Render()
 }
 void Application::RegisterStates()
 {
-    Logger::WriteLog("RegisterStates");
+    LOG(INFO) << "RegisterStates";
     mStateStack.RegisterState<TitleState>(StateID::Title);
+    mStateStack.RegisterState<MenuState>(StateID::Menu);
 }
