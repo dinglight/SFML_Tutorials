@@ -4,6 +4,7 @@
 
 #include "TitleState.h"
 #include "MenuState.h"
+#include "LoadingState.h"
 #include "GameState.h"
 #include "PauseState.h"
 
@@ -81,6 +82,7 @@ void Application::RegisterStates()
     LOG(INFO) << "RegisterStates";
     mStateStack.RegisterState<TitleState>(StateID::Title);
     mStateStack.RegisterState<MenuState>(StateID::Menu);
+    mStateStack.RegisterState<LoadingState>(StateID::Loading);
     mStateStack.RegisterState<GameState>(StateID::Game);
     mStateStack.RegisterState<PauseState>(StateID::Pause);
 }
