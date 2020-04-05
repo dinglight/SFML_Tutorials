@@ -15,6 +15,7 @@ set(SRCS
     src/StateStack.cpp
     src/TitleState.cpp
     src/MenuState.cpp
+    src/GameState.cpp
     src/Logger.cpp
     )
 add_executable(${PROJECT_NAME} ${SRCS})

@@ -2,6 +2,7 @@
 #define _GAME_STATE_H_
 
 #include "State.h"
+#include <SFML/Graphics/Sprite.hpp>
 
 class GameState : public State {
 public:
@@ -12,6 +13,8 @@ public:
     virtual void Draw() override;
 
 private:
+    sf::Sprite mPlayer;
+    sf::Vector2f mPlayerSpeed;
 
 };
 

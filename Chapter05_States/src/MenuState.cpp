@@ -39,7 +39,8 @@ bool MenuState::HandleEvent(const sf::Event& event)
 
     if (event.key.code == sf::Keyboard::Return) {
         if (mSelectedTextIndex == 0) {
-            
+            RequestStatePop();
+            RequestStatePush(StateID::Game);
         } else if (mSelectedTextIndex == 1) {
             RequestStatePop();
         }
