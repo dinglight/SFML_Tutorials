@@ -18,6 +18,7 @@ set(SRCS
     src/LoadingState.cpp
     src/GameState.cpp
     src/PauseState.cpp
+    src/LoadingTask.cpp
     src/ParallelTask.cpp
     src/Logger.cpp
     )

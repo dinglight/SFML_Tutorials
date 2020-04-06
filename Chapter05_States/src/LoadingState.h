@@ -5,6 +5,7 @@
 #include <SFML/Graphics/RectangleShape.hpp>
 #include <SFML/Graphics/Text.hpp>
 #include "ParallelTask.h"
+#include "LoadingTask.h"
 
 class LoadingState : public State {
 public:
@@ -20,7 +21,8 @@ private:
     sf::RectangleShape mProgressBarBackground;
     sf::RectangleShape mProgressBar;
 
-    ParallelTask mLoadingTask;
+    //ParallelTask mLoadingTask;
+    LoadingTask mLoadingTask;
 };
 
 #endif // _LOADING_STATE_H_
